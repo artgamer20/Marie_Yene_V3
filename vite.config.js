@@ -5,14 +5,13 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__currentDir, 'index.html'),
-        services: resolve(__currentDir, 'services.html'),
-        villages: resolve(__currentDir, 'villages.html'),
-        actualites: resolve(__currentDir, 'actualites.html'),
-        apropos: resolve(__currentDir, 'apropos.html'),
-        contact: resolve(__currentDir, 'contact.html'),
-        maire: resolve(__currentDir, 'maire.html'),
-        
+        main: resolve(__dirname, 'index.html'),
+        services: resolve(__dirname, 'services.html'),
+        villages: resolve(__dirname, 'villages.html'),
+        actualites: resolve(__dirname, 'actualites.html'),
+        apropos: resolve(__dirname, 'apropos.html'),
+        contact: resolve(__dirname, 'contact.html'),
+        maire: resolve(__dirname, 'maire.html'),
       },
     },
   },
