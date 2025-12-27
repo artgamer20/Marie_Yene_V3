@@ -13,13 +13,13 @@ export const initHeader = () => {
                 <span>Mairie de <strong>Yene</strong></span>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" data-page="index">Accueil</a></li>
-                <li><a href="actualites.html" data-page="actualites">Actualités</a></li>
-                <li><a href="services.html" data-page="services">Démarches</a></li>
-                <li><a href="apropos.html" data-page="apropos">A Propos</a></li>
-                <li><a href="maire.html" data-page="maire">Le Maire</a></li>
-                <li><a href="villages.html" data-page="villages">Nos Villages</a></li>
-                <li><a href="contact.html" class="btn-contact" data-page="contact">Contact</a></li>
+                <li><a href="/index.html" data-page="index">Accueil</a></li>
+                <li><a href="/actualites.html" data-page="actualites">Actualités</a></li>
+                <li><a href="/services.html" data-page="services">Démarches</a></li>
+                <li><a href="/apropos.html" data-page="apropos">A Propos</a></li>
+                <li><a href="/maire.html" data-page="maire">Le Maire</a></li>
+                <li><a href="/villages.html" data-page="villages">Nos Villages</a></li>
+                <li><a href="/contact.html" class="btn-contact" data-page="contact">Contact</a></li>
             </ul>
             <div class="header-tools">
                 <div id="weatherWidget" class="weather-badge">
