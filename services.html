@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démarches & Pièces à Fournir - Mairie de Yene</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/src/styles/style.css">
+    <link rel="icon" type="image/png" href="/src/assets/log.webp">
+</head>
+<body>
+
+    <div id="global-header"></div>
+
+    <header class="page-header small">
+        <div class="header-content">
+            <span class="badge">Guichet Numérique</span>
+            <h1>Démarches <span class="text-gradient">Administratives</span></h1>
+            <p>Préparez vos dossiers en avance. Voici la liste exacte des documents à fournir pour chaque demande.</p>
+        </div>
+    </header>
+<section class="container" style="position: relative; z-index: 10;">
+    
+    <div class="glass p-30 search-container" style="margin-bottom: 30px;">
+        <div class="big-search">
+            <i class="fas fa-search"></i>
+            <input type="text" id="serviceFilter" placeholder="Rechercher une démarche (ex: Naissance, Permis...)">
+        </div>
+        <div class="categories-wrapper">
+            <button class="filter-btn active" data-filter="all">Tout</button>
+            <button class="filter-btn" data-filter="etat_civil">État Civil</button>
+            <button class="filter-btn" data-filter="urbanisme">Urbanisme</button>
+            <button class="filter-btn" data-filter="foncier">Foncier</button>
+        </div>
+    </div>
+
+    <div id="services-container" class="services-grid">
+    </div>
+
+</section>
+
+    <div id="global-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script type="module" src="/src/scripts/script.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+</body>
+</html>

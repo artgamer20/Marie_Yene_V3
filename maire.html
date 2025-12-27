@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Maire & Exécutif - Mairie de Yene</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/src/styles/style.css">
+    <link rel="icon" type="image/png" href="/src/assets/log.webp">
+</head>
+<body>
+
+    <div id="global-header"></div>
+
+    <header class="page-header small">
+        <div class="header-content">
+            <span class="badge">Gouvernance & Histoire</span>
+            <h1>L'Exécutif <span class="text-gradient">Municipal</span></h1>
+            <p>Le Maire actuel et les figures historiques qui ont bâti Yene.</p>
+        </div>
+    </header>
+
+    <section class="container py-80">
+        <div class="glass p-30 split-layout align-center">
+            <div class="split-image-container">
+                <img src="images/le_Maire.jpg" alt="Maire Elhadj Massamba Mbengue" class="portrait-img">
+                <div style="text-align: center; margin-top: 15px;">
+                    <span class="badge" style="background: var(--yene-green); color: white; border: none;">Maire en exercice</span>
+                </div>
+            </div>
+            
+            <div class="split-content">
+                <h2>M. Elhadj Massamba Mbengue</h2>
+                <p class="lead">"Servir Yene, c'est bâtir l'avenir ensemble."</p>
+                
+                <div style="color: #555; margin-bottom: 20px;">
+                    <p>À la tête de la municipalité depuis Janvier 2022, le Maire s'engage pour une transformation durable de la commune, axée sur la modernisation des services et la protection de notre littoral.</p>
+                </div>
+
+                <h3>Axes Prioritaires</h3>
+                 <ul class="check-list">
+                    <li><i class="fas fa-check-circle"></i> Digitalisation de l'État Civil.</li>
+                    <li><i class="fas fa-check-circle"></i> Soutien à la pêche et au tourisme durable.</li>
+                    <li><i class="fas fa-check-circle"></i> Éducation et infrastructures scolaires.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" style="padding-bottom: 80px;">
+        <div class="section-header">
+            <h2>Devoir de Mémoire</h2>
+            <p>Hommage aux hommes qui ont dirigé Yene (Commune et Communauté Rurale).</p>
+        </div>
+
+        <div class="former-mayors-grid">
+            
+            <div class="mayor-card glass">
+                <div class="mayor-card-img">
+                    <img src="images/Gorgui-Ciss.jpg" alt="Gorgui Ciss"> 
+                </div>
+                <h3>Pr. Gorgui Ciss</h3>
+                <span class="mandate-tag">Dernier PCR & 1er Maire</span>
+                <p class="mandate-dates">2002 - 2022</p>
+                <p class="mayor-desc">Il a guidé la transition historique de la Communauté Rurale vers la Commune de plein exercice en 2014.</p>
+            </div>
+
+            <div class="mayor-card glass">
+                <div class="mayor-card-img">
+                    <img src="images/ancien_2.jpg" alt="Nom Ancien 2" onerror="this.src='https://via.placeholder.com/150?text=Photo'">
+                </div>
+                <h3>Mr. Ahmed D. SECK</h3>
+                <span class="mandate-tag">Ancien PCR</span>
+                <p class="mandate-dates">Avant 2002</p>
+                <p class="mayor-desc">Président du Conseil Rural ayant œuvré pour le développement des infrastructures de base.</p>
+            </div>
+
+            <div class="mayor-card glass">
+                <div class="mayor-card-img">
+                    <img src="images/ancien_3.jpg" alt="Nom Ancien 3" onerror="this.src='https://via.placeholder.com/150?text=Photo'">
+                </div>
+                <h3>Mr. Momar G. NGOM</h3>
+                <span class="mandate-tag">Ancien PCR</span>
+                <p class="mandate-dates">[Année - Année]</p>
+                <p class="mayor-desc">Acteur clé de l'histoire administrative de Yene et de la structuration des villages.</p>
+            </div>
+
+            <div class="mayor-card glass">
+                <div class="mayor-card-img">
+                    <img src="images/ancien_4.jpg" alt="Nom Ancien 4" onerror="this.src='https://via.placeholder.com/150?text=Photo'">
+                </div>
+                <h3>Mr. Apha GUEYE</h3>
+                <span class="mandate-tag">Ancien PCR</span>
+                <p class="mandate-dates">[Année - Année]</p>
+                <p class="mayor-desc">Pionnier de la gouvernance locale, il a posé les fondations de notre collectivité.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="global-footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script type="module" src="/src/scripts/script.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+</body>
+</html>

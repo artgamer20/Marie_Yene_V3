@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos - Mairie de Yene</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/src/styles/style.css">
+    <link rel="icon" type="image/png" href="/src/assets/log.webp">
+
+    <style>
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .tab-content p {
+    line-height: 1.8; /* Espace entre les lignes pour faciliter la lecture */
+    text-align: justify; /* Pour un rendu plus propre */
+    color: #444;
+}
+
+        .tab-content.active-content {
+            display: block;
+        }
+
+        .tab-btn {
+            border: none;
+            width: 100%;
+            text-align: left;
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .tab-btn i {
+            width: 20px;
+            color: var(--yene-green, #2e7d32);
+        }
+
+        .tab-btn.active {
+            background-color: var(--yene-green, #2e7d32) !important;
+            color: white !important;
+        }
+
+        .tab-btn.active i {
+            color: white;
+        }
+
+        .tab-img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Style spécifique pour les chiffres dans l'onglet */
+        .stats-mini-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .stat-item {
+            padding: 15px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 10px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .split-layout { flex-direction: column; }
+            .split-content-display { margin-left: 0 !important; margin-top: 20px; }
+            .stats-mini-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="global-header"></div>
+
+    <header class="page-header small">
+        <div class="header-content">
+            <span class="badge">Territoire & Démographie</span>
+            <h1>Découvrir <span class="text-gradient">Yene</span></h1>
+            <p>Entre tradition léboue et modernité, une commune en pleine expansion.</p>
+        </div>
+    </header>
+
+    <section class="container py-80">
+        <div class="glass p-30 mb-50">
+            <div class="split-layout" style="display: flex;">
+                
+                <div class="split-nav" style="flex: 1; display: flex; flex-direction: column;">
+                    <button class="tab-btn active glass" onclick="openTab(event, 'histoire')">
+                        <i class="fas fa-history"></i> Histoire & Origines
+                    </button>
+                    <button class="tab-btn glass" onclick="openTab(event, 'culture')">
+                        <i class="fas fa-om"></i> Traditions & Penc
+                    </button>
+                    <button class="tab-btn glass" onclick="openTab(event, 'economie')">
+                        <i class="fas fa-anchor"></i> Économie Locale
+                    </button>
+                    <button class="tab-btn glass" onclick="openTab(event, 'geographie')">
+                        <i class="fas fa-map-marked-alt"></i> Administration
+                    </button>
+                    <button class="tab-btn glass" onclick="openTab(event, 'chiffres')">
+                        <i class="fas fa-chart-line"></i> Chiffres Clés
+                    </button>
+                </div>
+
+                <div class="split-content-display glass" style="flex: 2; margin-left: 30px; padding: 25px; min-height: 450px;">
+                    
+                    <div id="histoire" class="tab-content active-content">
+                        <img src="images/yene123445.webp" class="tab-img" alt="Histoire de Yene">
+                        <h3>Le Berceau de la Noblesse Léboue</h3>
+                        <p>L'histoire de Yene est indissociable de l'épopée du peuple Lébou, communauté de pêcheurs et de propriétaires terriens qui s'est installée sur la Petite-Côte dès le XVe siècle. À l'origine, Yene était un refuge stratégique, choisi pour sa position surélevée offrant une vue imprenable sur l'océan, permettant de guetter les bancs de poissons et de prévenir les incursions.
+
+                        La fondation de Yene repose sur le pacte social du "Jom" (l'honneur et le courage) et de la "Teranga" (l'hospitalité). Au fil des siècles, le village s'est structuré autour de lignées familiales fortes qui ont su préserver l'autonomie du territoire face aux influences coloniales. Aujourd'hui, Yene n'est plus seulement un hameau de pêcheurs, mais une sentinelle historique qui lie le passé maritime du Sénégal à son futur émergent.</p>
+                    </div>
+
+                    <div id="culture" class="tab-content">
+                        <img src="images/yene.jpg" class="tab-img" alt="Culture Léboue">
+                        <h3>L'Âme de la Communauté</h3>
+                        <p>Le "Penc" est bien plus qu'une place publique ; c'est le cœur battant de la démocratie sociale à Yene. Dans chaque village de la commune, le Penc sert de tribunal traditionnel, de lieu de palabres et d'espace sacré pour les cérémonies rituelles. C'est là que les "Sages" et les dignitaires traditionnels exercent le pouvoir de médiation, garantissant une paix sociale que les structures modernes envient souvent.
+
+                        La culture de Yene est aussi rythmée par le sacré, notamment à travers les rites du "Ndëpp" (cérémonies thérapeutiques et spirituelles) visant à harmoniser les relations entre les hommes et les esprits de la mer (les Rap). Cette identité spirituelle forte fait de Yene un sanctuaire culturel unique au Sénégal, où la modernité n'a jamais effacé la profondeur des racines ancestrales.</p>
+                    </div>
+
+                    <div id="economie" class="tab-content">
+                        <img src="images/Yenne_7633.jpg" class="tab-img" alt="Pêche à Yene">
+                        <h3>Entre Sillon Maritime et Terre Fertile</h3>
+                        <p>L'économie de Yene repose sur une dualité ancestrale : la mer et la terre. La pêche artisanale demeure le premier pilier économique, faisant vivre des milliers de familles à travers une chaîne de valeur complexe allant des charpentiers de pirogues aux mareyeurs et femmes transformatrices de produits halieutiques.
+
+                        Parallèlement, Yene bénéficie d'un microclimat favorable à l'agriculture maraîchère. Les terres de l'arrière-pays produisent une part importante des légumes qui alimentent les marchés de Dakar et Rufisque. Aujourd'hui, cette économie se diversifie avec l'essor du tourisme résidentiel et éco-responsable. La commune attire de nouveaux investissements grâce à ses plages préservées, créant un pont entre les métiers traditionnels et les services de demain.</p>
+                    </div>
+
+                    <div id="geographie" class="tab-content">
+                        <img src="images/admin.webp" class="tab-img" alt="Administration Yene">
+                        <h3>Un Carrefour Stratégique du Sénégal Émergent</h3>
+                        <p>Depuis l'acte III de la décentralisation, la Commune de Yene occupe une place prépondérante dans le département de Rufisque, au sein de la région de Dakar. Située à la lisière du pôle urbain de Diamniadio, elle fait désormais office de "zone tampon" vitale entre l'effervescence de la métropole dakaroise et la tranquillité de la Petite-Côte.
+
+                        Administrativement, la commune est un modèle de gestion territoriale qui supervise 9 villages (Yene Tod, Yene Guedj, Yene Kao, Nditakh, Niangal, Toubab Dialaw, etc.). Sous l'égide du Conseil Municipal, la mairie travaille activement à la modernisation des infrastructures (santé, éducation, voirie) tout en protégeant son littoral contre l'érosion. Cette position stratégique fait de Yene un acteur incontournable du développement économique national.</p>
+                    </div>
+
+                    <div id="chiffres" class="tab-content">
+                        <img src="images/stats.webp" class="tab-img" alt="Statistiques Yene">
+                        <h3>Yene en quelques chiffres</h3>
+                        <div class="stats-mini-grid">
+                            <div class="stat-item">
+                                <strong style="color: var(--yene-green); font-size: 1.2rem;">47 759</strong>
+                                <p style="margin: 0; font-size: 0.9rem;">Habitants (ANDS 2025)</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong style="color: var(--yene-green); font-size: 1.2rem;">9</strong>
+                                <p style="margin: 0; font-size: 0.9rem;">Villages officiels</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong style="color: var(--yene-green); font-size: 1.2rem;">+3 600</strong>
+                                <p style="margin: 0; font-size: 0.9rem;">Ménages recensés</p>
+                            </div>
+                            <div class="stat-item">
+                                <strong style="color: var(--yene-green); font-size: 1.2rem;">15 km</strong>
+                                <p style="margin: 0; font-size: 0.9rem;">De façade maritime</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="global-footer"></div>
+    <script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].classList.remove("active-content");
+        }
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("active");
+        }
+        document.getElementById(tabName).classList.add("active-content");
+        evt.currentTarget.classList.add("active");
+    }
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script type="module" src="/src/scripts/script.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+</body>
+</html>

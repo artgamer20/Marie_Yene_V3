@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos 9 Villages - Mairie de Yene</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="/src/styles/style.css">
+    <link rel="icon" type="image/png" href="/src/assets/log.webp">
+</head>
+<body>
+
+    <div id="global-header"></div>
+
+    <header class="page-header small">
+        <div class="header-content">
+            <span class="badge">Territoire Communal</span>
+            <h1>Les 9 Villages de <span class="text-gradient">Yene</span></h1>
+            <p>Découvrez la diversité de notre commune : traditions léboues, pôles touristiques et zones agricoles.</p>
+        </div>
+    </header>
+
+    <section class="container py-80">
+        <div class="village-layout">
+            
+            <div class="village-list">
+                
+                <div class="village-card glass" onclick="focusVillage('yene_guedj')">
+                    <img src="images/yeneguedj.jpg" alt="Yene Guedj" class="v-img" onerror="this.src='https://via.placeholder.com/150'">
+                    <div class="v-content">
+                        <h3>Yène Guedj</h3>
+                        <div class="meta"><span><i class="fas fa-landmark"></i> Chef-lieu</span></div>
+                        <p>Siège de la Mairie et centre administratif historique de la commune.</p>
+                        <button class="btn-locate">Voir sur la carte</button>
+                    </div>
+                </div>
+
+                <div class="village-card glass" onclick="focusVillage('yene_kaw')">
+                    <img src="images/yenekao.jpg" alt="Yene Kao" class="v-img" onerror="this.src='https://via.placeholder.com/150'">
+                    <div class="v-content">
+                        <h3>Yène Kao</h3>
+                        <div class="meta"><span><i class="fas fa-water"></i> Pêche Artisanale</span></div>
+                        <p>Village de pêcheurs traditionnel avec une large plage et des pirogues colorées.</p>
+                        <button class="btn-locate">Voir sur la carte</button>
+                    </div>
+                </div>
+
+                <div class="village-card glass" onclick="focusVillage('nianghal')">
+                    <img src="images/nianghal.jpg" alt="Nianghal" class="v-img" onerror="this.src='https://via.placeholder.com/150'">
+                    <div class="v-content">
+                        <h3>Nianghal</h3>
+                        <div class="meta"><span><i class="fas fa-users"></i> Pôle Démographique</span></div>
+                        <p>Le village le plus peuplé, abritant un quai de pêche dynamique.</p>
+                        <button class="btn-locate">Voir sur la carte</button>
+                    </div>
+                </div>
+
+                <div class="village-card glass" onclick="focusVillage('toubab_dialao')">
+                    <img src="images/toubab.webp" alt="Toubab Dialaw" class="v-img" onerror="this.src='https://via.placeholder.com/150'">
+                    <div class="v-content">
+                        <h3>Toubab Dialaw</h3>
+                        <div class="meta"><span><i class="fas fa-umbrella-beach"></i> Tourisme & Culture</span></div>
+                        <p>Site balnéaire réputé pour ses falaises et son centre artistique (Sobo Bade).</p>
+                        <button class="btn-locate">Voir sur la carte</button>
+                    </div>
+                </div>
+
+                <div class="village-card glass" onclick="focusVillage('nditakh')">
+                    <img src="images/nditakh.jpg" alt="Nditakh" class="v-img" onerror="this.src='https://via.placeholder.com/150'">
+                    <div class="v-content">
+                        <h3>Nditakh</h3>
+                        <div class="meta"><span><i class="fas fa-seedling"></i> Agriculture</span></div>
+                        <p>Zone en plein essor, mêlant habitat résidentiel et pécheurs.</p>
+                        <button class="btn-locate">Voir sur la carte</button>
+                    </div>
+                </div>
+
+                <div class="village-card glass" onclick="focusVillage('kelle')">
+                    <img src="images/kelle.jpg" alt="Kelle" class="v-img" onerror="this.src='https://via.placeholder.com/150'">
+                    <div class="v-content">
+                        <h3>Kelle</h3>
+                        <div class="meta"><span><i class="fas fa-tree"></i> Nature & Calme</span></div>
+                        <p>Un village paisible offrant un cadre de vie rural préservé.</p>
+                        <button class="btn-locate">Voir sur la carte</button>
+                    </div>
+                </div>
+
+                <div class="village-card glass" onclick="focusVillage('niayes_khayes')">
+                    <img src="images/niayes.jpg" alt="Niayes Khayes" class="v-img" onerror="this.src='https://via.placeholder.com/150'">
+                    <div class="v-content">
+                        <h3>Niayes Khayes</h3>
+                        <div class="meta"><span><i class="fas fa-tractor"></i> Élevage</span></div>
+                        <p>Spécialisé dans l'élevage et les activités pastorales.</p>
+                        <button class="btn-locate">Voir sur la carte</button>
+                    </div>
+                </div>
+
+                <div class="village-card glass" onclick="focusVillage('ndoukhoura_ouolof')">
+                    <img src="images/ndoukhoura.jpg" alt="Ndoukhoura Ouolof" class="v-img" onerror="this.src='https://via.placeholder.com/150'">
+                    <div class="v-content">
+                        <h3>Ndoukhoura Ouolof</h3>
+                        <div class="meta"><span><i class="fas fa-home"></i> Tradition</span></div>
+                        <p>Village historique ancré dans les valeurs traditionnelles.</p>
+                        <button class="btn-locate">Voir sur la carte</button>
+                    </div>
+                </div>
+
+                <div class="village-card glass" onclick="focusVillage('yene_todd')">
+                    <img src="images/todd.jpg" alt="Yene Todd" class="v-img" onerror="this.src='https://via.placeholder.com/150'">
+                    <div class="v-content">
+                        <h3>Yene Todd</h3>
+                        <div class="meta"><span><i class="fas fa-paw"></i> Tradition</span></div>
+                        <p>Village historique ancré dans les valeurs traditionnelles.</p>
+                        <button class="btn-locate">Voir sur la carte</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="map-container-sticky">
+                <div id="map-villages" class="glass" style="height: 100%; min-height: 500px; border-radius: 16px;"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="global-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script type="module" src="/src/scripts/script.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez-nous - Mairie de Yene</title>
+    
+    <!-- Polices et Icones -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Bibliothèques CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="/src/styles/style.css">
+    <link rel="icon" type="image/png" href="/src/assets/log.webp">
+</head>
+<body>
+
+    <div id="global-header"></div>
+
+    <header class="page-header small">
+        <div class="header-content">
+            <span class="badge">Relation Citoyenne</span>
+            <h1>Nous <span class="text-gradient">Contacter</span></h1>
+            <p>Une question ? Un signalement ? Nos services sont à votre écoute.</p>
+        </div>
+    </header>
+
+    <section class="container py-80">
+        <div class="contact-layout">
+            
+<div class="glass p-30 contact-form-wrapper">
+    <h2 style="margin-bottom: 20px;">Envoyer un message</h2>
+    
+    <div id="form-status" style="display:none; padding: 15px; border-radius: 8px; margin-bottom: 20px;"></div>
+
+    <form id="my-form" action="https://formspree.io/f/mqarnvgo" method="POST">
+        
+        <div class="form-group">
+            <label for="name">Nom complet</label>
+            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+        </div>
+
+        <div class="form-group">
+            <label for="sujet">Sujet</label>
+            <select id="sujet" name="sujet">
+                <option value="info">Demande d'information</option>
+                <option value="signalement">Signalement (Voirie, Éclairage...)</option>
+                <option value="rdv">Demande de RDV Maire</option>
+                <option value="etat-civil">État Civil</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Comment pouvons-nous vous aider ?" required></textarea>
+        </div>
+
+        <button type="submit" id="my-form-button" class="full-width">Envoyer le message</button>
+    </form>
+</div>
+
+<script>
+    var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+        event.preventDefault(); // Empêche la page de changer
+        var status = document.getElementById("form-status");
+        var btn = document.getElementById("my-form-button");
+        var data = new FormData(event.target);
+
+        // Effet de chargement sur le bouton
+        var originalText = btn.innerText;
+        btn.innerText = "Envoi en cours...";
+        btn.disabled = true;
+        btn.style.opacity = "0.7";
+
+        fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                // SUCCÈS : Affiche le message vert et vide le formulaire
+                status.style.display = "block";
+                status.style.backgroundColor = "rgba(0, 133, 63, 0.1)"; // Vert léger
+                status.style.color = "var(--yene-green)";
+                status.style.border = "1px solid var(--yene-green)";
+                status.innerHTML = "<i class='fas fa-check-circle'></i> Merci ! Votre message a bien été envoyé à la Mairie.";
+                
+                form.reset(); // VIDE LES CHAMPS !
+                
+                // Remet le bouton normal après 3 secondes
+                setTimeout(() => {
+                    status.style.display = "none";
+                }, 5000);
+
+            } else {
+                // ERREUR
+                response.json().then(data => {
+                    if (Object.hasOwn(data, 'errors')) {
+                        status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                    } else {
+                        status.innerHTML = "Oups! Il y a eu un problème lors de l'envoi.";
+                    }
+                    status.style.display = "block";
+                    status.style.backgroundColor = "rgba(227, 27, 35, 0.1)"; // Rouge léger
+                    status.style.color = "var(--yene-red)";
+                })
+            }
+        }).catch(error => {
+            status.innerHTML = "Oups! Il y a eu un problème lors de l'envoi.";
+            status.style.display = "block";
+            status.style.backgroundColor = "rgba(227, 27, 35, 0.1)";
+            status.style.color = "var(--yene-red)";
+        }).finally(() => {
+            // Remet le bouton actif
+            btn.innerText = originalText;
+            btn.disabled = false;
+            btn.style.opacity = "1";
+        });
+    }
+
+    form.addEventListener("submit", handleSubmit);
+
+function initContactMap() {
+    // Coordonnées de la Mairie de Yène (Sénégal)
+    const lat = 14.64082;
+    const lng = -17.17306;
+
+    // 1. Initialise la carte dans la div 'map-contact'
+    const map = L.map('map-contact').setView([lat, lng], 15);
+
+    // 2. Charge les "tuiles" (le fond de carte) depuis OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // 3. Ajoute un marqueur personnalisé pour la Mairie
+    L.marker([lat, lng]).addTo(map)
+        .bindPopup('<b>Mairie de Yène</b><br>Hôtel de ville.')
+        .openPopup();
+}
+
+// Lancer la fonction une fois que la page est chargée
+document.addEventListener('DOMContentLoaded', initContactMap);
+</script>
+
+            <div class="contact-info">
+                <div class="glass p-30 mb-30" style="margin-bottom: 30px;">
+                    <h3 style="margin-bottom: 20px;">Nos Coordonnées</h3>
+                    <ul class="info-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Hôtel de Ville, Yene Guedj</li>
+                        <li><i class="fas fa-phone"></i> +221 33 800 00 00</li>
+                        <li><i class="fas fa-envelope"></i> contact@mairieyene.sn</li>
+                        <li><i class="fas fa-clock"></i> Lun-Ven: 8h-16h</li>
+                    </ul>
+                </div>
+                
+                <div id="map-contact" class="glass" style="height: 300px; border-radius: 16px; border: 1px solid #eee;"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="global-footer"></div>
+
+        <!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script type="module" src="/src/scripts/script.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+</body>
+</html>

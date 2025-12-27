@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualités - Mairie de Yene</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/src/styles/style.css">
+    <link rel="icon" type="image/png" href="/src/assets/log.webp">
+</head>
+<body>
+
+    <div id="global-header"></div>
+
+    <header class="page-header small">
+        <div class="header-content">
+            <span class="badge">Vie Communale</span>
+            <h1>L'Actualité à <span class="text-gradient">Yene</span></h1>
+            <p>Retrouvez tous les événements, annonces officielles et projets en cours.</p>
+        </div>
+    </header>
+
+    <section class="container py-80">
+        <div class="glass p-30 mb-50" style="margin-bottom: 40px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
+            <h3>Dernières publications</h3>
+            <div class="categories-wrapper" style="margin:0;">
+                <button class="filter-btn active">Tout</button>
+                <button class="filter-btn">Santé</button>
+                <button class="filter-btn">Conseil Municipal</button>
+                <button class="filter-btn">Culture</button>
+            </div>
+        </div>
+
+        <div class="news-grid" id="news-container-full">
+            </div>
+
+        <!-- Optionnel : Pagination ou bouton "Charger plus" -->
+        <div class="text-center mt-50" id="load-more-container" style="display:none;">
+        <button class="btn-secondary" id="load-more-btn" onclick="loadMoreNews()">
+            <i class="fas fa-sync-alt"></i> Charger plus d'actualités
+        </button>
+    </div>
+    </section>
+
+    <div id="global-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script type="module" src="/src/scripts/script.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+</body>
+</html>
