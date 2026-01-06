@@ -6,15 +6,23 @@
     <meta name="google-site-verification" content="DW0Kb730h8oaf7q2z9B3X4EgqF9BMqHB-dsdOV9DbNs" />
     <meta name="description" content="Démarches administratives en ligne, état civil, actualités et cartographie de la commune de Yene. Votre mairie à portée de clic.">
     <meta name="keywords" content="Mairie de Yene, commune Yene, Sénégal, Petite Côte, État civil Sénégal">
+    <title>Mairie de Yene | Portail Officiel de la Commune (Sénégal)</title>
+    <meta name="description" content="Découvrez le portail numérique de la Mairie de Yene. État civil en ligne, actualités communales, cartographie des villages et démarches administratives simplifiées.">
 
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mairieyene.vercel.app/">
+    <meta property="og:title" content="Mairie de Yene - Services aux Citoyens">
+    <meta property="og:description" content="Simplifiez vos démarches administratives et suivez l'actualité de votre commune.">
+    <meta property="og:image" content="https://mairieyene.vercel.app/src/assets/log.webp">
+
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="Mairie de Yene - Portail Numérique">
     <link rel="canonical" href="https://mairieyene.vercel.app/">
     <title>Portail Citoyen - Mairie de Yene</title>
     
-    <!-- Polices et Icones -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- Bibliothèques CSS -->
     <link rel="icon" type="image/png" href="/src/assets/log.webp">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -22,10 +30,8 @@
 </head>
 <body>
 
-    <!-- Header injecté par script.js -->
     <div id="global-header"></div>
 
-    <!-- Hero Section -->
     <header class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content" data-aos="fade-up">
@@ -39,11 +45,10 @@
         </div>
     </header>
 
-    <!-- Section Mot du Maire -->
     <section class="container" style="margin-top: -80px; position: relative; z-index: 10;">
         <div class="glass mayor-home-card" data-aos="zoom-in">
             <div class="mayor-img-wrapper">
-                <img src="/src/assets/le_Maire.jpg" alt="El Hadji Massamba MBENGUE, Maire de Yene">
+                <img src="/src/assets/le_Maire.jpg" alt="El Hadji Massamba MBENGUE, Maire de Yene" onerror="this.src='https://via.placeholder.com/300x400?text=Maire+de+Yene'">
             </div>
             <div class="mayor-content">
                 <span class="badge">Le Mot de l'Édile</span>
@@ -57,40 +62,44 @@
         </div>
     </section>
 
-    <!-- Équipe Municipale -->
-<div class="former-mayors-grid">
-    <div class="mayor-card glass" data-aos="fade-up">
-        <div class="mayor-card-img">
-            <img src="/src/assets/ibra.jpg" alt="Mr. Ibra DIAGNE"> 
+    <section class="container py-80">
+        <div class="section-header text-center mb-50">
+            <h2>L'Équipe <span class="text-gradient">Municipale</span></h2>
+            <p>Les élus au service des citoyens de Yene.</p>
         </div>
-        <i class="fas fa-user-tie mayor-icon"></i> <!-- Icône ajoutée -->
-        <h3>Mr. Ibra DIAGNE</h3>
-        <span class="mandate-tag">1er Adjoint au Maire</span>
-        <p class="mayor-desc">Coordination administrative et suivi des grands projets.</p>
-    </div>
+        <div class="former-mayors-grid">
+            <div class="mayor-card glass" data-aos="fade-up">
+                <div class="mayor-card-img">
+                    <img src="/src/assets/ibra.jpg" alt="Mr. Ibra DIAGNE" onerror="this.src='https://via.placeholder.com/150'"> 
+                </div>
+                <i class="fas fa-user-tie mayor-icon"></i>
+                <h3>Mr. Ibra DIAGNE</h3>
+                <span class="mandate-tag">1er Adjoint au Maire</span>
+                <p class="mayor-desc">Coordination administrative et suivi des grands projets.</p>
+            </div>
 
-    <div class="mayor-card glass" data-aos="fade-up" data-aos-delay="100">
-        <div class="mayor-card-img">
-            <img src="/src/assets/xxx.jpg" alt="Mme. Yacine NIANG"> 
+            <div class="mayor-card glass" data-aos="fade-up" data-aos-delay="100">
+                <div class="mayor-card-img">
+                    <img src="/src/assets/xxx.jpg" alt="Mme. Yacine NIANG" onerror="this.src='https://via.placeholder.com/150'"> 
+                </div>
+                <i class="fas fa-hands-helping mayor-icon"></i>
+                <h3>Mme. Yacine NIANG</h3>
+                <span class="mandate-tag">2ème Adjointe au Maire</span>
+                <p class="mayor-desc">Affaires sociales, santé et promotion de la femme.</p>
+            </div>
+            
+            <div class="mayor-card glass" data-aos="fade-up" data-aos-delay="200">
+                <div class="mayor-card-img">
+                    <img src="/src/assets/xxxx.jpg" alt="Mr. Issa SECK" onerror="this.src='https://via.placeholder.com/150'"> 
+                </div>
+                <i class="fas fa-leaf mayor-icon"></i>
+                <h3>Mr. Issa SECK</h3>
+                <span class="mandate-tag">3ème Adjoint au Maire</span>
+                <p class="mayor-desc">Environnement, cadre de vie et assainissement.</p>
+            </div>
         </div>
-        <i class="fas fa-hands-helping mayor-icon"></i> <!-- Icône différente -->
-        <h3>Mme. Yacine NIANG</h3>
-        <span class="mandate-tag">2ème Adjointe au Maire</span>
-        <p class="mayor-desc">Affaires sociales, santé et promotion de la femme.</p>
-    </div>
-    
-    <div class="mayor-card glass" data-aos="fade-up" data-aos-delay="200">
-        <div class="mayor-card-img">
-            <img src="/src/assets/xxxx.jpg" alt="Mr. Issa SECK"> 
-        </div>
-        <i class="fas fa-leaf mayor-icon"></i> <!-- Icône différente -->
-        <h3>Mr. Issa SECK</h3>
-        <span class="mandate-tag">3ème Adjoint au Maire</span>
-        <p class="mayor-desc">Environnement, cadre de vie et assainissement.</p>
-    </div>
-</div>
+    </section>
 
-    <!-- Chiffres Clés -->
     <section class="container py-80">
         <div class="section-header">
             <h2>Yene en Chiffres</h2>
@@ -99,20 +108,14 @@
         
         <div class="bento-grid">
             <div class="bento-card glass text-center">
-                 <div class="particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-    </div>
-    <div class="card-glow"></div>
+                <div class="card-glow"></div>
                 <div class="icon-box green" style="margin: 0 auto 15px;"><i class="fas fa-users"></i></div>
-                <h3 class="stat-number">47 759</h3>
+                <h3 class="stat-number">47759</h3>
                 <p>Habitants (ANDS 2025)</p>
             </div>
             <div class="bento-card glass text-center">
                 <div class="icon-box yellow" style="margin: 0 auto 15px;"><i class="fas fa-home"></i></div>
-                <h3 class="stat-number">3 607</h3>
+                <h3 class="stat-number">3607</h3>
                 <p>Ménages & Foyers</p>
             </div>
             <div class="bento-card glass text-center">
@@ -123,21 +126,19 @@
         </div>
     </section>
 
-    <!-- Actualités (Dynamique via Contentful) -->
     <section class="container py-80" id="actualites">
         <div class="section-header">
             <h2>Actualités Récentes</h2>
             <p>Suivez les projets et événements de la commune.</p>
         </div>
         <div class="news-grid" id="news-container-home">
-            <!-- Injecté par script.js -->
+            <div class="text-center p-30"><i class="fas fa-spinner fa-spin fa-2x"></i></div>
         </div>
         <div class="text-center mt-40">
             <a href="/actualites.html" class="btn-secondary">Toute l'actualité</a>
         </div>
     </section>
 
-    <!-- Galerie Photo -->
     <section class="container py-80">
         <div class="section-header">
             <span class="badge">Patrimoine</span>
@@ -155,16 +156,8 @@
                     <div class="slide-caption">Les falaises majestueuses de Toubab Dialaw</div>
                 </div>
                 <div class="slide">
-                    <img src="/src/assets/Yenne_7642.jpg" alt="Falaises de Toubab Dialaw" loading="lazy">
-                    <div class="slide-caption">Les falaises majestueuses de Toubab Dialaw</div>
-                </div>
-                <div class="slide">
-                    <img src="/src/assets/yene123445.webp" alt="Falaises de Toubab Dialaw" loading="lazy">
-                    <div class="slide-caption">Les falaises majestueuses de Toubab Dialaw</div>
-                </div>
-                <div class="slide">
-                    <img src="/src/assets/yene123.webp" alt="Falaises de Toubab Dialaw" loading="lazy">
-                    <div class="slide-caption">Les falaises majestueuses de Toubab Dialaw</div>
+                    <img src="/src/assets/Yenne_7642.jpg" alt="Paysage de Yene" loading="lazy">
+                    <div class="slide-caption">La côte sauvage</div>
                 </div>
             </div>
             
@@ -172,80 +165,78 @@
             <button class="gallery-nav next" onclick="moveGallery(1)" aria-label="Suivant"><i class="fas fa-chevron-right"></i></button>
             
             <div class="gallery-dots">
-                <button class="dot active" onclick="currentSlide(0)"></button>
-                <button class="dot" onclick="currentSlide(1)"></button>
+                <button class="dot active" onclick="moveGallery(0)"></button>
+                <button class="dot" onclick="moveGallery(1)"></button>
+                <button class="dot" onclick="moveGallery(2)"></button>
             </div>
         </div>
     </section>
+
     <section class="container py-80">
-    <div class="section-header text-center mb-50" data-aos="fade-up">
-        <span class="badge">E-Administration</span>
-        <h2>Accès <span class="text-gradient">Rapides</span></h2>
-        <p>Vos démarches municipales à portée de clic.</p>
-    </div>
+        <div class="section-header text-center mb-50">
+            <span class="badge">E-Administration</span>
+            <h2>Accès <span class="text-gradient">Rapides</span></h2>
+            <p>Vos démarches municipales à portée de clic.</p>
+        </div>
 
-    <div class="bento-grid-5">
-        <a href="services.html#etat-civil" class="bento-item glass main-item" data-aos="zoom-in">
-            <div class="bento-icon"><i class="fas fa-file-invoice"></i></div>
-            <div class="bento-text">
-                <h3>État Civil</h3>
-                <p>Demandes d'extraits de naissance, mariage et certificats divers.</p>
-                <span class="btn-mini">Accéder <i class="fas fa-chevron-right"></i></span>
-            </div>
-            <div class="bg-shape"><i class="fas fa-stamp"></i></div>
-        </a>
+        <div class="bento-grid-5">
+            <a href="services.html#etat_civil" class="bento-item glass main-item" data-aos="zoom-in">
+                <div class="bento-icon"><i class="fas fa-file-invoice"></i></div>
+                <div class="bento-text">
+                    <h3>État Civil</h3>
+                    <p>Demandes d'extraits de naissance, mariage et certificats divers.</p>
+                    <span class="btn-mini">Accéder <i class="fas fa-chevron-right"></i></span>
+                </div>
+            </a>
 
-        <a href="services.html#urbanisme" class="bento-item glass" data-aos="fade-up" data-aos-delay="100">
-            <div class="bento-icon green"><i class="fas fa-city"></i></div>
-            <div class="bento-text">
-                <h3>Urbanisme</h3>
-                <p>Permis de construire et foncier.</p>
-            </div>
-        </a>
+            <a href="services.html#urbanisme" class="bento-item glass" data-aos="fade-up" data-aos-delay="100">
+                <div class="bento-icon green"><i class="fas fa-city"></i></div>
+                <div class="bento-text">
+                    <h3>Urbanisme</h3>
+                    <p>Permis de construire et foncier.</p>
+                </div>
+            </a>
 
-        <a href="contact.html" class="bento-item glass" data-aos="fade-up" data-aos-delay="400">
-            <div class="bento-icon blue"><i class="fas fa-comments"></i></div>
-            <div class="bento-text">
-                <h3>Nous Contacter</h3>
-                <p>Prendre rendez-vous avec le Maire.</p>
-            </div>
-        </a>
+            <a href="contact.html" class="bento-item glass" data-aos="fade-up" data-aos-delay="400">
+                <div class="bento-icon blue"><i class="fas fa-comments"></i></div>
+                <div class="bento-text">
+                    <h3>Nous Contacter</h3>
+                    <p>Prendre rendez-vous avec le Maire.</p>
+                </div>
+            </a>
 
-        <a href="services.html#sante" class="bento-item glass medium-item" data-aos="fade-up" data-aos-delay="300">
-            <div class="bento-icon red"><i class="fas fa-heartbeat"></i></div>
-            <div class="bento-text">
-                <h3>Santé & Social</h3>
-                <p>Centres de santé de Yene et aides aux familles démunies.</p>
-            </div>
-        </a>
-    </div>
-</section>
+            <a href="services.html#sante" class="bento-item glass medium-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="bento-icon red"><i class="fas fa-heartbeat"></i></div>
+                <div class="bento-text">
+                    <h3>Santé & Social</h3>
+                    <p>Centres de santé de Yene et aides sociales.</p>
+                </div>
+            </a>
+        </div>
+    </section>
 
-    <!-- Footer injecté par script.js -->
     <div id="global-footer"></div>
 
-    <!-- Scripts -->
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "GovernmentOrganization",
-  "name": "Commune de Yène",
-  "url": "https://mairieyene.vercel.app/",
-  "logo": "https://mairieyene.vercel.app/images/log.webp",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Yene Guedj",
-    "addressCountry": "SN"
-  }
-}
-</script>
-<script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script type="module" src="/src/scripts/script.js"></script>
-    <script>
-        AOS.init({ duration: 800, once: true });
+    {
+      "@context": "https://schema.org",
+      "@type": "GovernmentOrganization",
+      "name": "Commune de Yène",
+      "url": "https://mairieyene.vercel.app/",
+      "logo": "https://mairieyene.vercel.app/src/assets/log.webp",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Yene Guedj",
+        "addressCountry": "SN"
+      }
+    }
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script type="module" src="/src/scripts/script.js"></script>
+
 </body>
 </html>
