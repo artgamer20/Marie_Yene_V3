@@ -1,15 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <footer>
-    <div class="container">
-        <p>&copy; ${new Date().getFullYear()} Commune de Yene. </p>
+<footer class="footer-main py-80">
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <img src="/src/assets/log.webp" alt="Logo Yene" class="footer-logo">
+            <p>République du Sénégal<br>Département de Rufisque</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-nav">
+            <h4>Liens Utiles</h4>
+            <ul>
+                <li><a href="services.html">État Civil</a></li>
+                <li><a href="actualites.html">Annonces Officielles</a></li>
+                <li><a href="villages.html">Cartographie</a></li>
+                <li><a href="contact.html">Prendre RDV</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contact">
+            <h4>Contact Direct</h4>
+            <p><i class="fas fa-map-marker-alt"></i> Hôtel de Ville, Yene Guedj</p>
+            <p><i class="fas fa-phone"></i> +221 33 800 00 00</p>
+            <p><i class="fas fa-clock"></i> Lun - Ven : 08h00 - 16h00</p>
+        </div>
+    </div>
+    <div class="footer-bottom text-center">
+        <p>&copy; <span id="currentYear"></span> Commune de Yene - Digitalisation par Art Tech</p>
     </div>
 </footer>
-</body>
-</html>

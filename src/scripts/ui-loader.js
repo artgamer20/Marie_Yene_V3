@@ -1,11 +1,14 @@
 /* ============================================================
-   CHARGEMENT DYNAMIQUE DU HEADER ET FOOTER
+   CHARGEMENT DYNAMIQUE DU HEADER ET FOOTER (SÉCURISÉ)
    ============================================================ */
 
 export const initHeader = () => {
     const header = document.getElementById('global-header');
     if (!header) return;
     
+    // SÉCURITÉ : Si le header a déjà des enfants (déjà injecté), on arrête.
+    if (header.children.length > 0) return;
+
     header.innerHTML = `
         <nav class="navbar glass">
             <div class="logo">
@@ -27,19 +30,30 @@ export const initHeader = () => {
                 </div>
                 <button id="themeToggle" class="theme-btn" aria-label="Thème"><i class="fas fa-moon"></i></button>
             </div>
-            <button class="hamburger" id="hamBtn"><i class="fas fa-bars"></i></button>
+            <button class="hamburger" id="hamBtn"><i class="fas fa-bars\"></i></button>
         </nav>`;
 };
 
 export const initFooter = () => {
     const footer = document.getElementById('global-footer');
     if (!footer) return;
-    footer.innerHTML = `<footer><div class="container"><p>&copy; ${new Date().getFullYear()} Commune de Yene. </p></div></footer>`;
+
+    // SÉCURITÉ : Évite la duplication du footer
+    if (footer.children.length > 0) return;
+
+    footer.innerHTML = `
+        <footer>
+            <div class="container">
+                <p>&copy; ${new Date().getFullYear()} Commune de Yene. Digitalisation par <a href="https://art-tech-officielle.vercel.app/" target="_blank" class="art-tech-link">ART TECH Studio</a>.</p>
+            </div>
+        </footer>`;
 };
 
 export const initActiveNav = () => {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-links a').forEach(link => {
-        if (link.getAttribute('href') === currentPage) link.classList.add('active');
+        if (link.getAttribute('href').includes(currentPage)) {
+            link.classList.add('active');
+        }
     });
 };

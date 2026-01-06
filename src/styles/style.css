@@ -15,6 +15,172 @@
     --gray: #64748b;
     --light: #f8fafc;
     --white: #ffffff;
+    /* --- FOOTER STYLE ART TECH --- */
+.footer-main {
+    background: #0a0f18; /* Bleu très sombre comme sur l'image */
+    color: #ffffff;
+    padding: 80px 0 0 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 60px;
+}
+
+.brand-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-left: 10px;
+}
+
+.brand-tagline {
+    color: #8a8f98;
+    font-style: italic;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    margin-top: 25px;
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #8a8f98;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #ffffff;
+}
+
+.footer-nav h4, .footer-contact h4 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav ul li {
+    margin-bottom: 12px;
+}
+
+.footer-nav ul li a {
+    color: #8a8f98;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-nav ul li a:hover {
+    color: #ffffff;
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    background: #070b12;
+    padding: 25px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    color: #5a5f68;
+    font-size: 0.8rem;
+}
+
+.bottom-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.art-tech-link {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.art-tech-link:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    .social-links { justify-content: center; }
+    .bottom-flex { flex-direction: column; gap: 10px; }
+}
+.footer-simple {
+    background: #0a0f18; /* Bleu nuit Art Tech */
+    color: #8a8f98;
+    padding: 40px 0;
+    font-size: 0.85rem;
+}
+
+.footer-content-simple {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-brand-minimal .brand-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: #fff;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.footer-brand-minimal .brand-tagline {
+    font-size: 0.75rem;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+.footer-links-minimal {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-links-minimal a {
+    color: #8a8f98;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links-minimal a:hover {
+    color: #fff;
+}
+
+.footer-copyright-minimal {
+    text-align: right;
+}
+
+.art-tech-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Adaptabilité Mobile */
+@media (max-width: 768px) {
+    .footer-content-simple {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-copyright-minimal {
+        text-align: center;
+    }
+}
     
     /* Glassmorphism System */
     --glass-bg: rgba(255, 255, 255, 0.90);
